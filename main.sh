@@ -138,7 +138,7 @@ gd() {
 
 # same as gd, but doesn't have pager
 gdnp() {
-	clear
+	c
 	gall
 	git --no-pager diff HEAD
 }
