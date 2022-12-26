@@ -4,7 +4,7 @@
 
 declare bpm="/home/<username>/bpm"
 
-source "${bpm_lib}/lib/pdir.sh"
+source "${bpm}/lib/pdir.sh"
 
 # clear screen
 c() {
