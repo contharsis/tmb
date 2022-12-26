@@ -149,8 +149,9 @@ grt() {
 	gcl
 	git restore --staged .
  	cd "$(get_pdir)"
- }
- 
+}
+
+# discard whole index
 gri() {
 	set_pdir
 	gcl
