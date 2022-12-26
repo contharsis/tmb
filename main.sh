@@ -1,6 +1,19 @@
 #!/bin/bash
+
+# description
 # main file, add to be sourced in shell file which is sourced when you initiallize shell environment
 # holds mostly user oriented content
+
+# development
+# since this is a template, to develop create "dev" directory, add "dev" to .gitignore
+# enter "dev" directory, add contents which you've changed (usually from bpm/), gad to add all content from dev, gd to see it and manually add code to its correct place
+# open a pull request
+
+# stopper
+# to stop this script from executing, export stop_main="true", uncomment next if statement
+# if [ "$stop_main" = "true" ]; then
+# 	return
+# fi
 
 declare bpm="/home/<username>/bpm"
 
@@ -109,6 +122,7 @@ groh() {
 gp() {
 	git pull
 }
+
 # git status
 gss() {
 	c
@@ -122,11 +136,37 @@ gd() {
 	git diff HEAD
 }
 
-# unstage all changes from tree
-gra() {
+# same as gd, but doesn't have pager
+gdnp() {
+	clear
+	gall
+	git --no-pager diff HEAD
+}
+
+# unstage whole tree
+grt() {
+ 	set_pdir
+	gcl
+	git restore --staged .
+ 	cd "$(get_pdir)"
+ }
+ 
+gri() {
 	set_pdir
-	git prev 
+	gcl
+	git restore .
 	cd "$(get_pdir)"
+}
+
+# discard file
+grf() {
+	git restore --staged --worktree "$1"	
+}
+
+# unstage whole tree and discard whole index
+grad() {
+	grt
+	gri
 }
 
 # git log
