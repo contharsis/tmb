@@ -31,10 +31,11 @@ eb() {
 
 # reload .bashrc
 # needs fix, doesn't reset environment (variables, etc.)
-rb() {        
-	clear
+rb() {
+        set_pdir
+        c
         exec bash
-	cd "$cdir"
+        cd "$(get_pdir)"
 }
 
 # exit terminal
