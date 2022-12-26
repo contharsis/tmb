@@ -146,7 +146,7 @@ gdnp() {
 
 # unstage whole tree
 grt() {
- 	set_pdir
+	set_pdir
 	gcl
 	git restore --staged .
  	cd "$(get_pdir)"
