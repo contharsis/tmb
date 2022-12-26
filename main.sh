@@ -1,6 +1,8 @@
 #!/bin/bash
+# main file, add to be sourced in shell file which is sourced when you initiallize shell environment
+# holds mostly user oriented content
 
-declare bpm_lib="/home/<username>/bpm"
+declare bpm="/home/<username>/bpm"
 
 source "${bpm_lib}/lib/pdir.sh"
 
@@ -42,7 +44,7 @@ cd<letter>() {
 	c
 }
 
-# launch application
+# launch app
 sq<letter>() {
 	sqlite3 <path to database>
 }
