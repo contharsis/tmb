@@ -49,6 +49,11 @@ cdc() {
 	c
 }
 
+# go back one directory
+cf() {
+        cd ..
+}
+
 # add library for vector with it's respective functions with functionality like in C++
 # add moving library for bash to move to place provided by first argument
 
