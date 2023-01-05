@@ -93,10 +93,8 @@ gpu() {
 
 # git commit with comment which is first argument $1 
 gfc() {
-	set_pdir
 	git commit -m "$1"
 	git push
-	cd "$(get_pdir)"
 }
 
 # git push force, forcely push current state, be careful
@@ -106,6 +104,7 @@ gpf() {
 
 # fast git push
 gf() {
+	gall
 	gfc "Update repository"
 }
 
